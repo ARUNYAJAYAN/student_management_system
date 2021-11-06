@@ -24,7 +24,6 @@ class StudentList(generics.ListAPIView):
     serializer_class = StudentListSerializer
 
 
-
 class StudentDetail(generics.RetrieveDestroyAPIView):
     queryset = Student
     serializer_class = StudentListSerializer
