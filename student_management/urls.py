@@ -15,20 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from student.views import StudentList, StudentDetail, StudentCreate, StudentUpdate, \
-    MarkList, MarkDetail, MarkCreate, MarkUpdate
+from student.views import StudentCreate, StudentUpdate, MarkCreate, MarkUpdate, UploadStudent, UploadPdfFile
 from teacher.views import TeacherList, TeacherDetail
 
 urlpatterns = [
-    path('api/student', StudentCreate.as_view()),
-    path('api/student/<int:pk>', StudentUpdate.as_view()),
-    path('api/students', StudentList.as_view()),
-    path('api/students/<int:pk>', StudentDetail.as_view()),
-    path('api/student/mark', MarkCreate.as_view()),
-    path('api/student/mark/<int:pk>', MarkUpdate.as_view()),
-    path('api/student/marks', MarkList.as_view()),
-    path('api/student/marks/<int:pk>', MarkDetail.as_view()),
+    path('api/students', StudentCreate.as_view()),
+    path('api/students/<int:pk>', StudentUpdate.as_view()),
+    path('api/student/marks', MarkCreate.as_view()),
+    path('api/student/marks/<int:pk>', MarkUpdate.as_view()),
     path('api/teachers', TeacherList.as_view()),
-    path('api/teachers', TeacherDetail.as_view()),
+    path('api/import-student', UploadStudent.as_view()),
+    path('api/student', UploadPdfFile.as_view()),
+    path('api/teachers/<int:pk>', TeacherDetail.as_view()),
     path('admin/', admin.site.urls),
 ]

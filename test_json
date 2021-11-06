@@ -1,0 +1,191 @@
+1. Create student
+    API URL : http://127.0.0.1:8000/api/students
+    METHOD : POST
+    BODY : {
+
+                "name": "John",
+                "age": 28,
+                "gender": "M",
+                "reporting_teacher": 1
+            }
+    RESPONSE : {
+                    "status": 200,
+                    "data": {
+                                "id": 12,
+                                "name": "John",
+                                "age": 28,
+                                "gender": "M",
+                                "reporting_teacher": 1
+                            },
+                    "message": "Your details saved successfully"
+                }
+
+2. List student
+    API URL : http://127.0.0.1:8000/api/students
+    METHOD : GET
+    BODY : null
+    RESPONSE : {
+                    "status": 200,
+                    "data": [
+                        {
+                            "id": 8,
+                            "name": "Anu s",
+                            "age": 28,
+                            "gender": "M",
+                            "reporting_teacher": {
+                                "id": 1,
+                                "name": "Katie"
+                            }
+                        },
+                        {
+                            "id": 9,
+                            "name": "Anu s",
+                            "age": 28,
+                            "gender": "M",
+                            "reporting_teacher": {
+                                "id": 1,
+                                "name": "Katie"
+                            }
+                        },
+                        {
+                            "id": 10,
+                            "name": "Anu s",
+                            "age": 28,
+                            "gender": "M",
+                            "reporting_teacher": {
+                                "id": 1,
+                                "name": "Katie"
+                            }
+                        },
+                        {
+                            "id": 11,
+                            "name": "Anu s",
+                            "age": 28,
+                            "gender": "F",
+                            "reporting_teacher": {
+                                "id": 1,
+                                "name": "Katie"
+                            }
+                        },
+                        {
+                            "id": 12,
+                            "name": "John",
+                            "age": 28,
+                            "gender": "M",
+                            "reporting_teacher": {
+                                "id": 1,
+                                "name": "Katie"
+                            }
+                        }
+                    ],
+                    "message": "Student list"
+                }
+
+3. Update student
+
+    API URL : http://127.0.0.1:8000/api/students/8
+    METHOD : PUT
+    BODY : {
+
+                "name": "John",
+                "age": 28,
+                "gender": "M",
+                "reporting_teacher": 1
+            }
+    RESPONSE : {
+                    "status": 200,
+                    "data": {
+                        "id": 8,
+                        "name": "John",
+                        "age": 28,
+                        "gender": "M",
+                        "reporting_teacher": 1
+                    },
+                    "message": "Your details saved successfully"
+                }
+
+4. Delete student
+    API URL : http://127.0.0.1:8000/api/students/8
+    METHOD : DELETE
+    BODY : null
+    RESPONSE : {
+                    "status": 200,
+                    "data": {},
+                    "message": "Deleted successfully"
+                }
+
+5. Create marks
+    API URL : http://127.0.0.1:8000/api/student/marks
+    METHOD : POST
+    BODY : {
+                "student":11,
+                "term":"One",
+                "subject":"{ 'Maths':60, 'Science': 70, 'History': 60}",
+                "total_marks":190
+            }
+    RESPONSE : {
+                    "status": 200,
+                    "data": {
+                        "id": 17,
+                        "student": 11,
+                        "term": "One",
+                        "subject": "{ 'Maths':60, 'Science': 70, 'History': 60}",
+                        "total_marks": 190,
+                        "created_on": "2021-11-06T15:29:53.141930Z"
+                    },
+                    "message": "Your details saved successfully"
+                }
+
+6. List marks
+    API URL : http://127.0.0.1:8000/api/student/marks
+    METHOD : GET
+    BODY : null
+    RESPONSE : {
+                "status": 200,
+                "data": [
+                    {
+                        "id": 17,
+                        "student": {
+                            "id": 11,
+                            "name": "Anu s"
+                        },
+                        "term": "One",
+                        "subject": "{ 'Maths':60, 'Science': 70, 'History': 60}",
+                        "total_marks": 190,
+                        "created_on": "2021-11-06T15:29:53.141930Z"
+                    }
+                ],
+                "message": "Student list"
+            }
+
+7. Update marks
+    API URL : http://127.0.0.1:8000/api/student/marks/17
+    METHOD : PUT
+    BODY : {
+                "student":11,
+                "term":"One",
+                "subject":"{ 'Maths':60, 'Science': 70, 'History': 60}",
+                "total_marks":190
+            }
+    RESPONSE : {
+                "status": 200,
+                "data": {
+                    "id": 17,
+                    "student": 11,
+                    "term": "One",
+                    "subject": "{ 'Maths':60, 'Science': 70, 'History': 60}",
+                    "total_marks": 190,
+                    "created_on": "2021-11-06T15:29:53.141930Z"
+                },
+                "message": "Your details saved successfully"
+            }
+
+8. Delete Marks
+    API URL : http://127.0.0.1:8000/api/student/marks/17
+    METHOD : DELETE
+    BODY : null
+    RESPONSE : {
+                    "status": 200,
+                    "data": {},
+                    "message": "Deleted successfully"
+                }

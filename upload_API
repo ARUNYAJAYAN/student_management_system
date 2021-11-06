@@ -1,0 +1,19 @@
+1. Upload csv file
+   API URL : http://127.0.0.1:8000/api/import-student
+   METHOD : POST
+   BODY : form data
+                    import_file : file
+   RESPONSE : {
+                "status": 200,
+                "data": [
+                    {
+                        "id": 17,
+                        "name": "Benna",
+                        "age": 6,
+                        "gender": "M",
+                        "reporting_teacher": 1
+                    }
+                ],
+                "message": "Your details saved successfully"
+            }
+

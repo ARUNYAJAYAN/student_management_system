@@ -12,9 +12,6 @@ class StudentSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'age', 'gender', 'reporting_teacher']
 
     def validate(self, data):
-        print(data)
-        print(data['reporting_teacher'])
-        # raise serializers.ValidationError({"reporting_teacher": "No such teacher"})
         return data
 
 
