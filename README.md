@@ -11,7 +11,7 @@ Student marks CRUD
 
 To run the application:
 
-1.Clone the project using git clone command 
+1.Clone the project using git clone command
 2.Run python manange.py makemigrations and then python manage.py migrate for applying those migrations. 
 3.Run python manage.py runserver
 
